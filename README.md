@@ -1,8 +1,8 @@
 # uiDemo
 ###Show some ui usage
 
-Ok,I will display some View usage by demo provided.
+##Ok,I will display some View usage by demo provided.
 
 Include：
 
-UISegmentControl：see more infomation at <a href='http://nowsilence.sinaapp.com/?p=58'>here</a> if you understand chinese.
++UISegmentControl：see more infomation at <a href='http://nowsilence.sinaapp.com/?p=58'>here</a> if you understand chinese.
