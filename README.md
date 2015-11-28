@@ -1,5 +1,4 @@
-# uiDemo
-##Show some ui usage
+#Show some ui usage
 
 ###Ok,I will display some View usage by demo provided.
 
