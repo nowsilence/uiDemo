@@ -1,6 +1,6 @@
 #Show some ui usage
 
-###Ok,I will display some View usage by demo provided.
+###Ok,I will display some view usage by demo provided.
 
 Include：
 
