@@ -5,4 +5,4 @@
 
 Include：
 
-*UISegmentControl：see more infomation at <a href='http://nowsilence.sinaapp.com/?p=58'>here</a> if you understand chinese.
+* UISegmentControl：see more infomation at <a href='http://nowsilence.sinaapp.com/?p=58'>here</a> if you understand chinese.
