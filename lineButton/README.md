@@ -1,3 +1,3 @@
  
  
-  ![image](https://github.com/ButBueatiful/uiDemo/lineButton/ScreenShot.png )
+  ![image](https://github.com/nowsilence/uiDemo/raw/master/lineButton/ScreenShot.png)
