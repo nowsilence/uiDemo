@@ -1,8 +1,8 @@
 //
-//  NILineButton.m
+//  NCLineButton.m
 //  lineButton
 //
-//  Created by Kevin Chou on 15/12/20.
+//  Created by Nigel Chou on 15/12/20.
 //  Copyright (c) 2015年 BeautyFuture. All rights reserved.
 //
 
@@ -25,19 +25,17 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-
+    
     if (self)
     {
         self.backgroundColor = [UIColor clearColor];
         
         _colors = [NSMutableDictionary dictionaryWithCapacity:3];
         
-        [_colors setObject:[UIColor colorWithRed:0 green:122 blue:255 alpha:0] forKey:@(UIControlStateNormal)];
+        [_colors setObject:[UIColor colorWithRed:0 green:122/255.f blue:1 alpha:1] forKey:@(UIControlStateNormal)];
         
         _backgroundColors = [NSMutableDictionary dictionaryWithCapacity:3];
         
-//        [_backgroundColors setObject:[UIColor colorWithWhite:1 alpha:0] forKey:@(UIControlStateNormal)];
-
         _titles = [NSMutableDictionary dictionaryWithCapacity:3];
         
         self.cornerRadius = frame.size.height / 2;
@@ -62,6 +60,11 @@
     return self;
 }
 
+- (void)setTitleFont:(UIFont *)titleFont
+{
+    _titleLabel.font = titleFont;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -69,11 +72,6 @@
     UIColor *strokeColor = [self colorForState:self.state];
     
     UIColor *fillColor = [self backgroundColorForState:self.state];
-    
-//    CGColorRef strokeColor = [[self colorForState:self.state] CGColor];
-//    
-//    CGColorRef fillColor = [[self backgroundColorForState:self.state] CGColor];
-    
     
     CGContextSetFillColorWithColor(ctx, [fillColor CGColor]);
     
@@ -83,38 +81,30 @@
     
     CGContextSetLineWidth(ctx, _lineWidth);
     
-    UIBezierPath *path = nil;
+    CGRect rrect = CGRectInset(self.bounds, _lineWidth, _lineWidth);
     
-    CGRect rrect;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rrect cornerRadius:self.cornerRadius];
     
     // draw background
     if(fillColor)
     {
-        CGRect rrect = CGRectInset(self.bounds, _lineWidth, _lineWidth);
-        
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rrect cornerRadius:self.cornerRadius];
-        
         CGContextAddPath(ctx, path.CGPath);
         
         CGContextFillPath(ctx);
     }
     
+    CGContextRestoreGState(ctx);
+    
     
     // draw line
-    
-    path = [UIBezierPath bezierPathWithRoundedRect:rrect cornerRadius:self.cornerRadius];
-    
     CGContextAddPath(ctx, path.CGPath);
     
     CGContextStrokePath(ctx);
     
-    CGContextRestoreGState(ctx);
     
-    _titleLabel.textColor = [self colorForState:self.state];
-
+    _titleLabel.textColor = strokeColor;
+    
     _titleLabel.text = [self titleForState:self.state];
-    
-    _titleLabel.frame = CGRectInset(self.bounds, self.lineWidth, self.lineWidth);
 }
 
 
@@ -137,7 +127,7 @@
     {
         color = [_colors objectForKey:@(UIControlStateNormal)];
         
-        if (state == UIControlStateDisabled)
+        if (state == UIControlStateDisabled || state == UIControlStateHighlighted)
         {
             color = [color colorWithAlphaComponent:.6];
         }
@@ -154,13 +144,27 @@
     {
         color = [_backgroundColors objectForKey:@(UIControlStateNormal)];
         
-        if (state == UIControlStateDisabled)
+        if (state == UIControlStateDisabled || state == UIControlStateHighlighted)
         {
             color = [color colorWithAlphaComponent:.6];
         }
     }
     
     return color;
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    
+    [self setNeedsDisplay];
 }
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state
@@ -193,10 +197,6 @@
 {
     self.highlighted = YES;
     
-    [self setNeedsDisplay];
-    
-    [self sendActionsForControlEvents:UIControlEventTouchDown];
-    
     return [super beginTrackingWithTouch:touch withEvent:event];
 }
 
@@ -209,21 +209,13 @@
 {
     self.highlighted = NO;
     
-    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    [self setNeedsDisplay];
-
     [super endTrackingWithTouch:touch withEvent:event];
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event
 {
     self.highlighted = NO;
-
-    [self sendActionsForControlEvents:UIControlEventTouchUpOutside];
     
-    [self setNeedsDisplay];
-
     [super cancelTrackingWithEvent:event];
 }
 
