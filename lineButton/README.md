@@ -1,5 +1,5 @@
  
- 
-  ![screenshot](./ScreenShot.png=375x667)
+  <img src=./ScreenShot.png width=375 height=667 />
+  
 
 
