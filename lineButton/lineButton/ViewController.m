@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NILineButton.h"
+#import "NCLineButton.h"
 
 @interface ViewController ()
 
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
 
-    NILineButton *lineButton = [[NILineButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    NCLineButton *lineButton = [[NCLineButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
     
     lineButton.backgroundColor = [UIColor grayColor];
     
@@ -34,7 +34,7 @@
     [self.view addSubview:lineButton];
 }
 
-- (void)testButton:(NILineButton *)button
+- (void)testButton:(NCLineButton *)button
 {
     button.selected = YES;
 }

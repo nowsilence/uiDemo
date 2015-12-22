@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 BeautyFuture. All rights reserved.
 //
 
-#import "NILineButton.h"
+#import "NCLineButton.h"
 
-@interface NILineButton()
+@interface NCLineButton()
 {
     NSMutableDictionary *_colors;
     
@@ -20,7 +20,7 @@
 }
 @end
 
-@implementation NILineButton
+@implementation NCLineButton
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
