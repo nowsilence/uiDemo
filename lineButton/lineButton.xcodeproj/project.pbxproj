@@ -14,7 +14,7 @@
 		491D903B1C26AD8C00CEFD49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491D903A1C26AD8C00CEFD49 /* Images.xcassets */; };
 		491D903E1C26AD8C00CEFD49 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491D903C1C26AD8C00CEFD49 /* LaunchScreen.xib */; };
 		491D904A1C26AD8C00CEFD49 /* lineButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D90491C26AD8C00CEFD49 /* lineButtonTests.m */; };
-		491D90551C26ADC200CEFD49 /* NCLineButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D90541C26ADC200CEFD49 /* NCLineButton.m */; };
+		498A97301C2A362900564B5E /* NCLineButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 498A972F1C2A362900564B5E /* NCLineButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		491D90431C26AD8C00CEFD49 /* lineButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lineButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		491D90481C26AD8C00CEFD49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491D90491C26AD8C00CEFD49 /* lineButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lineButtonTests.m; sourceTree = "<group>"; };
-		491D90531C26ADC200CEFD49 /* NCLineButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLineButton.h; sourceTree = "<group>"; };
-		491D90541C26ADC200CEFD49 /* NCLineButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLineButton.m; sourceTree = "<group>"; };
+		498A972E1C2A362900564B5E /* NCLineButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCLineButton.h; sourceTree = "<group>"; };
+		498A972F1C2A362900564B5E /* NCLineButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCLineButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,7 @@
 		491D902C1C26AD8C00CEFD49 /* lineButton */ = {
 			isa = PBXGroup;
 			children = (
+				498A972D1C2A362900564B5E /* NCLineButton */,
 				491D90311C26AD8C00CEFD49 /* AppDelegate.h */,
 				491D90321C26AD8C00CEFD49 /* AppDelegate.m */,
 				491D90341C26AD8C00CEFD49 /* ViewController.h */,
@@ -92,8 +93,6 @@
 				491D903A1C26AD8C00CEFD49 /* Images.xcassets */,
 				491D903C1C26AD8C00CEFD49 /* LaunchScreen.xib */,
 				491D902D1C26AD8C00CEFD49 /* Supporting Files */,
-				491D90531C26ADC200CEFD49 /* NCLineButton.h */,
-				491D90541C26ADC200CEFD49 /* NCLineButton.m */,
 			);
 			path = lineButton;
 			sourceTree = "<group>";
@@ -122,6 +121,15 @@
 				491D90481C26AD8C00CEFD49 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		498A972D1C2A362900564B5E /* NCLineButton */ = {
+			isa = PBXGroup;
+			children = (
+				498A972E1C2A362900564B5E /* NCLineButton.h */,
+				498A972F1C2A362900564B5E /* NCLineButton.m */,
+			);
+			path = NCLineButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491D90551C26ADC200CEFD49 /* NCLineButton.m in Sources */,
 				491D90361C26AD8C00CEFD49 /* ViewController.m in Sources */,
 				491D90331C26AD8C00CEFD49 /* AppDelegate.m in Sources */,
+				498A97301C2A362900564B5E /* NCLineButton.m in Sources */,
 				491D90301C26AD8C00CEFD49 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
