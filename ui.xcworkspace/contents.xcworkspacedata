@@ -4,4 +4,10 @@
    <FileRef
       location = "group:SegmentControl/SegmentControl.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:lineButton/lineButton.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CheckBox/CheckBox.xcodeproj">
+   </FileRef>
 </Workspace>
