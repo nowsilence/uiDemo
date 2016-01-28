@@ -1,3 +1,3 @@
   Custom CheckBox
   
-  <img src=./Untitled.gif width=348 height=640 />
+  <img src=./CheckBox.gif width=348 height=640 />
