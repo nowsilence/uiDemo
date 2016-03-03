@@ -2,6 +2,8 @@
 //  NCCheckBox.h
 //  CheckBox
 //
+//  gitHub:https://github.com/nowsilence/uiDemo/tree/master/CheckBox
+//
 //  Created by Nigel Chou on 16/1/28.
 //  Copyright (c) 2016年 BeautyFuture. All rights reserved.
 //
