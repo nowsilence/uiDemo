@@ -17,6 +17,7 @@
 		4933C6471C5A144A00F658F5 /* NCCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4933C6461C5A144A00F658F5 /* NCCheckBox.m */; };
 		4933C64A1C5A631C00F658F5 /* cb_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4933C6481C5A631C00F658F5 /* cb_normal@2x.png */; };
 		4933C64B1C5A631C00F658F5 /* cb_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4933C6491C5A631C00F658F5 /* cb_selected@2x.png */; };
+		498B24211C880F6D008DABC9 /* NCRadioGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 498B24201C880F6D008DABC9 /* NCRadioGroup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		4933C6461C5A144A00F658F5 /* NCCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCheckBox.m; sourceTree = "<group>"; };
 		4933C6481C5A631C00F658F5 /* cb_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_normal@2x.png"; sourceTree = "<group>"; };
 		4933C6491C5A631C00F658F5 /* cb_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_selected@2x.png"; sourceTree = "<group>"; };
+		498B241F1C880F6D008DABC9 /* NCRadioGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCRadioGroup.h; sourceTree = "<group>"; };
+		498B24201C880F6D008DABC9 /* NCRadioGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCRadioGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 			children = (
 				4933C6451C5A144A00F658F5 /* NCCheckBox.h */,
 				4933C6461C5A144A00F658F5 /* NCCheckBox.m */,
+				498B241F1C880F6D008DABC9 /* NCRadioGroup.h */,
+				498B24201C880F6D008DABC9 /* NCRadioGroup.m */,
 			);
 			path = NCCheckBox;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4933C6271C5A137900F658F5 /* ViewController.m in Sources */,
+				498B24211C880F6D008DABC9 /* NCRadioGroup.m in Sources */,
 				4933C6241C5A137900F658F5 /* AppDelegate.m in Sources */,
 				4933C6211C5A137900F658F5 /* main.m in Sources */,
 				4933C6471C5A144A00F658F5 /* NCCheckBox.m in Sources */,

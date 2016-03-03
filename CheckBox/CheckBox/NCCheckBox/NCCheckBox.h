@@ -14,6 +14,7 @@
 
 @property(nonatomic,strong) NSString *labelText;
 
+@property(nonatomic,strong) id userInfo;
 
 - (void)setImage:(UIImage *)image state:(UIControlState)state;
 
