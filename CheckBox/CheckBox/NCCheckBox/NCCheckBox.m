@@ -155,6 +155,16 @@
     }
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    _button.selected = YES;
+}
+
+- (BOOL)selected
+{
+    return _button.selected;
+}
+
 - (UIImage *)defaultImage:(BOOL)normal
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();

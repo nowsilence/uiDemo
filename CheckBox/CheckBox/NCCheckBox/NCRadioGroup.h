@@ -11,11 +11,13 @@
 #import <Foundation/Foundation.h>
 #import "NCCheckBox.h"
 
+@class NCRadioGroup;
+
 @protocol NCRadioGroupDelegate <NSObject>
 
 @optional
 
-- (void)radioValueChanged:(NCCheckBox *)box;
+- (void)radioGroup:(NCRadioGroup *)radioGroup valueChanged:(NCCheckBox *)box atIndex:(NSInteger)index;
 
 @end
 
@@ -23,6 +25,8 @@
 
 @property(nonatomic,weak) id<NCRadioGroupDelegate> delegate;
 
-- (void)setSelectIndex:(NSInteger)index;
+@property(nonatomic) NSInteger selectedIndex;
+
+- (void)addCheckBox:(NCCheckBox *)checkBox, ...;
 
 @end

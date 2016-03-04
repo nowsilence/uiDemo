@@ -20,20 +20,46 @@
     NSMutableArray *_boxes;
 }
 
-- (void)addCheckBox:(NCCheckBox *)box
+- (void)addCheckBox:(NCCheckBox *)checkBox, ...
 {
-    [box addTarget:self action:@selector(boxClicked:) forControlEvents:UIControlEventValueChanged];
+    NSMutableArray *array = [NSMutableArray array];
     
-    [self.boxes addObject:box];
+    va_list params;
+    
+    va_start(params,checkBox);
+    
+    id box;
+    
+    if (checkBox)
+    {
+        [array addObject:checkBox];
+
+        while( (box = va_arg(params,id)) )
+        {
+            if ( box ){
+                [array addObject:box];
+            }
+        }
+
+        va_end(params);
+    }
+    
+    for (NCCheckBox *_box in array) {
+        
+        [_box addTarget:self action:@selector(boxClicked:) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    
+    [self.boxes addObjectsFromArray:array];
 }
 
 - (void)boxClicked:(NCCheckBox *)box
 {
     [self valueChanged:box];
 
-    if (self.delegate && [self.delegate respondsToSelector:@selector(radioValueChanged:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(radioGroup:valueChanged:atIndex:)])
     {
-        [self.delegate radioValueChanged:box];
+        [self.delegate radioGroup:self valueChanged:box atIndex:[self.boxes indexOfObject:box]];
     }
 }
 
@@ -52,7 +78,7 @@
     }
 }
 
-- (void)setSelectIndex:(NSInteger)index
+- (void)setSelectedIndex:(NSInteger)index
 {
     if (index < self.boxes.count) {
         
@@ -60,6 +86,16 @@
         
         [self valueChanged:box];
     }
+}
+
+- (NSInteger)selectedIndex
+{
+    if (self.checkedBox) {
+        
+        return [self.boxes indexOfObject:self.checkedBox];
+    }
+    
+    return -1;
 }
 
 - (NSMutableArray *)boxes
