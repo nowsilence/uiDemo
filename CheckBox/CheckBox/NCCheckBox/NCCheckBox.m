@@ -157,7 +157,7 @@
 
 - (void)setSelected:(BOOL)selected
 {
-    _button.selected = YES;
+    _button.selected = selected;
 }
 
 - (BOOL)selected
