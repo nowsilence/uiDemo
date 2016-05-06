@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol NCSegmentControllerDelegate <NSObject>
+
+@optional
+
+- (void)segmentControllerDidScroll:(float)positionY;
+
+- (void)willPositionToIndex:(NSInteger)index position:(float)position;
+
+@end
+
 @interface NCSegmentController : UIViewController
 {
     UIView *_container;
 }
+
+@property(nonatomic,weak) id<NCSegmentControllerDelegate> delegate;
 
 @property(nonatomic,readonly) UIView *container;
 

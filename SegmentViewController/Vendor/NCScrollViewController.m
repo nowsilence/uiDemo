@@ -106,27 +106,24 @@
     
     _lastOffsetY = _scrollView.contentOffset.y;
     
-    scrollView.delegate = self;
+    [scrollView addObserver:self
+                 forKeyPath:@"contentOffset"
+                    options:NSKeyValueObservingOptionNew
+                    context:nil];
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    _lastOffsetY = scrollView.contentOffset.y;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+    if(_scrollView.contentOffset.y > _lastOffsetY && _scrollView.contentOffset.y >= _scrollView.contentSize.height - _scrollView.frame.size.height)
+    {
+        _scrollView.scrollEnabled = NO;
+    }
+    else if(_scrollView.contentOffset.y < _lastOffsetY && _scrollView.contentOffset.y <= 0)
+    {
+        _scrollView.scrollEnabled = NO;
+    }
     
-    if(scrollView.contentOffset.y > _lastOffsetY && scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height)
-    {
-        scrollView.scrollEnabled = NO;
-    }
-    else if(scrollView.contentOffset.y < _lastOffsetY && scrollView.contentOffset.y <= 0)
-    {
-        scrollView.scrollEnabled = NO;
-    }
-
-    _lastOffsetY = scrollView.contentOffset.y;
+    _lastOffsetY = _scrollView.contentOffset.y;
 }
 
 - (void)didReceiveMemoryWarning

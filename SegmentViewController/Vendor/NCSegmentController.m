@@ -67,6 +67,14 @@
         }
                 
         self.container.frame = frame;
+        
+        BOOL changed = self.container.frame.origin.y != frame.origin.y;
+
+        if(self.delegate && changed
+           && [self.delegate respondsToSelector:@selector(segmentControllerDidScroll:)])
+        {
+            [self.delegate segmentControllerDidScroll:frame.origin.y];
+        }
     }
     else if(gesture.state == UIGestureRecognizerStateEnded)
     {
@@ -121,6 +129,11 @@
     CGRect rect = self.container.frame;
     
     rect.origin.y = [[self.positionArray objectAtIndex:index] floatValue];
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(willPositionToIndex:position:)])
+    {
+        [self.delegate willPositionToIndex:index position:rect.origin.y];
+    }
     
     if(animated)
     {
