@@ -126,6 +126,11 @@
     _lastOffsetY = _scrollView.contentOffset.y;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"contentOffset"];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
